@@ -8,8 +8,8 @@ deployment and polls this repository for changes.
 | Portainer stack id | 11 |
 | Portainer host | ore-dock-110-4 |
 | Endpoint | - (id -) |
-| Swarm | whofnrgxv5ig |
-| Live service | tautulli-w-swarm_tautulli |
+| Swarm | True |
+| Live service | svc:tautulli-w-swarm_tautulli |
 | Git repo | https://github.com/chaseoriginal/tautulli-w-swarm |
 | Compose file | `docker-compose.yml` |
 | Auto-update poll | every 900s |
@@ -39,8 +39,8 @@ deployment and polls this repository for changes.
 ## Verifying a deployment
 
 ```bash
-docker service ls --filter name=tautulli-w-swarm_tautulli
-docker service inspect tautulli-w-swarm_tautulli --format '{{json .Spec.TaskTemplate.ContainerSpec.Mounts}}'
+docker service ls --filter name=svc:tautulli-w-swarm_tautulli
+docker service inspect svc:tautulli-w-swarm_tautulli --format '{{json .Spec.TaskTemplate.ContainerSpec.Mounts}}'
 ```
 
 A healthy stack shows `1/1` and the same volume names as before.
