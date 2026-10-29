@@ -1,22 +1,22 @@
----
 services:
   tautulli:
     image: lscr.io/linuxserver/tautulli:latest
     container_name: tautulli-w-swarm
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Chicago
+    - PUID=1000
+    - PGID=1000
+    - TZ=America/Chicago
     volumes:
-      - /var/lib/docker/volumes/tautulli-w-swarm/config:/config
+    - /var/lib/docker/volumes/tautulli-w-swarm/config:/config
     ports:
-      - target: 8181
-        published: 82
-        protocol: tcp
-        mode: host        
+    - target: 8181
+      published: 82
+      protocol: tcp
+      mode: host
     deploy:
       placement:
         constraints:
-          - node.labels.deployment.target.tautulli == true
+        - node.labels.deployment.target.tautulli == true
       restart_policy:
         condition: any
+volumes: {}
