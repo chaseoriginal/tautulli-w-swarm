@@ -1,6 +1,6 @@
 services:
   tautulli:
-    image: lscr.io/linuxserver/tautulli:latest
+    image: lscr.io/linuxserver/tautulli:v2.18.2-ls251
     container_name: tautulli-w-swarm
     environment:
     - PUID=1000
